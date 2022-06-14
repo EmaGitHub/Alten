@@ -7,6 +7,7 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MainModule } from './main/main.module';
+import { AppRoutingModule } from './app.routing.module.';
 
 @NgModule({
   imports: [
@@ -16,7 +17,10 @@ import { MainModule } from './main/main.module';
     BrowserAnimationsModule,
     FormsModule, 
     HttpClientModule,
-    MainModule
+    MainModule,
+
+    // *app routing
+    AppRoutingModule
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],

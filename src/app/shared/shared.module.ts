@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { ModalComponent } from './components/modal/modal.component';
-
 import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
+    entryComponents: [
+        SpinnerComponent
+  ],
   declarations: [
-      ModalComponent
+      ModalComponent,
+      SpinnerComponent
   ],
   imports: [
       /* Material */
@@ -17,6 +21,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
   ],
   exports: [
       ModalComponent,
+      SpinnerComponent,
       /* Material */
       MatProgressSpinnerModule,
       MatDialogModule,

@@ -3,6 +3,7 @@ import { HomeComponent } from './home/home.component';
 import { ListComponent } from './list/list.component';
 import { PostComponent } from './post/post.component';
 import { DetailComponent } from './detail/detail.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { DetailComponent } from './detail/detail.component';
     DetailComponent
   ],
   imports: [
+      CommonModule
   ],
   exports: [
     HomeComponent,
