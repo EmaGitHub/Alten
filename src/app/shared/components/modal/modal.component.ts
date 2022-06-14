@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
-/* import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
- */
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
@@ -22,15 +22,15 @@ export class ModalComponent implements OnInit {
 
   description: string = "Text";
 
-  /* constructor(private dialogRef: MatDialogRef<ModalComponent>, @Inject(MAT_DIALOG_DATA) data: any) {
+  constructor(private dialogRef: MatDialogRef<ModalComponent>, @Inject(MAT_DIALOG_DATA) data: any) {
       this.description = data.description;
-  } */
+    }
 
   ngOnInit() {
 
   }
 
   toggle(event: any) {
-    //this.dialogRef.close();
+    this.dialogRef.close();
   }
 }

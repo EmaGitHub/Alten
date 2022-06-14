@@ -1,4 +1,4 @@
-/* import { Injectable } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { MatDialog, MatDialogRef } from "@angular/material/dialog";
 import { SpinnerComponent } from "../../shared/components/spinner/spinner.component";
 
@@ -21,4 +21,4 @@ export class SpinnerService {
     stop(){  
         this.dialogRef?.close();  
     }    
-}  */
+} 

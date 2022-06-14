@@ -1,33 +1,33 @@
 import { NgModule } from '@angular/core';
 import { ModalComponent } from './components/modal/modal.component';
 
-/* import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatExpansionModule } from '@angular/material/expansion';
- */
+
 @NgModule({
   declarations: [
       ModalComponent
   ],
   imports: [
       /* Material */
-      /* MatProgressSpinnerModule,
+      MatProgressSpinnerModule,
       MatDialogModule,
-      MatExpansionModule */
+      MatExpansionModule
   ],
   exports: [
       ModalComponent,
       /* Material */
-      /* MatProgressSpinnerModule,
+      MatProgressSpinnerModule,
       MatDialogModule,
-      MatExpansionModule */
+      MatExpansionModule
   ],
   providers: [
-    /* {
+    {
       provide: MatDialogRef,
       useValue: {}
     },
-    { provide: MAT_DIALOG_DATA, useValue: {} } */
+    { provide: MAT_DIALOG_DATA, useValue: {} }
   ]
 })
 export class SharedModule { }
