@@ -1,7 +1,7 @@
-<p>List</p>
+<div style="width: 100%; text-align: center; margin: 20px 0;">
+    <button (click)="getData()">Load Data</button>
+</div>
 
-<button (click)="getData()">Load Data</button>
-
-<ul [@listAnimation]="posts.length">
+<div class="list-container" [@listAnimation]="posts.length">
     <app-post *ngFor="let post of posts" [post]="post" class="post-row"></app-post>
-</ul>
+</div>

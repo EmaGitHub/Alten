@@ -13,3 +13,7 @@ figcaption {
   font-size: 0.75rem;
   font-weight: 700;
 }
+
+app-home{
+  text-align: center;
+}

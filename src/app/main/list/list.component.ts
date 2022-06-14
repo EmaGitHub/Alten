@@ -35,6 +35,7 @@ export class ListComponent implements OnInit {
         this.posts = result[0];
         this.users = result[1];
         this.spinnerService.stop();
+        console.log("AAA "+JSON.stringify(this.posts))
       }
     )
   }

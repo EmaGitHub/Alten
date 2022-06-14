@@ -12,7 +12,6 @@ export class SpinnerService {
     constructor(private dialog: MatDialog) {  } 
   
     start(message?: string) {    
-      console.log("OPEN")
         this.dialogRef = this.dialog.open(SpinnerComponent,{  
             disableClose: true ,  
             data: message == ''|| message == undefined ? "" : message  
