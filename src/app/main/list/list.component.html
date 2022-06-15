@@ -8,6 +8,7 @@
     </mat-form-field>
 </div>
 
+<div *ngIf="posts.length > 0" class="list-header">Public Posts</div>
 <div *ngIf="posts.length > 0" class="list-container" [@listAnimation]="posts.length">
     <div *ngFor="let post of filteredPosts; let i = index" class="post-row">
         <app-post [post]="post" (removePost)="delete($event)"></app-post>
