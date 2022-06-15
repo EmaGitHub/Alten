@@ -31,8 +31,6 @@ import { MatButtonModule } from '@angular/material/button';
       MatButtonModule
   ],
   exports: [
-      ModalComponent,
-      SpinnerComponent,
       FormsModule,
 
       /* Material */

@@ -26,11 +26,6 @@ import { AppRoutingModule } from '../app.routing.module.';
       CommonModule,
       SharedModule
   ],
-  exports: [
-    HomeComponent,
-    ListComponent,
-    PostComponent,
-    DetailComponent
-  ]
+  exports: [  ]
 })
 export class MainModule { }
