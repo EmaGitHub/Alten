@@ -5,6 +5,9 @@ import { PostComponent } from './post/post.component';
 import { DetailComponent } from './detail/detail.component';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SharedModule } from '../shared/shared.module';
+import { UserComponent } from './user/user.component';
+import { AppRoutingModule } from '../app.routing.module.';
 
 @NgModule({
   entryComponents:[
@@ -15,10 +18,13 @@ import { NavbarComponent } from './navbar/navbar.component';
     ListComponent,
     PostComponent,
     DetailComponent,
-    NavbarComponent
+    NavbarComponent,
+    UserComponent
   ],
   imports: [
-      CommonModule
+      AppRoutingModule,
+      CommonModule,
+      SharedModule
   ],
   exports: [
     HomeComponent,

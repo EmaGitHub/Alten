@@ -4,9 +4,11 @@ import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/materia
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { SpinnerComponent } from './components/spinner/spinner.component';
-import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
     entryComponents: [
@@ -22,7 +24,11 @@ import { FormsModule } from '@angular/forms';
       /* Material */
       MatProgressSpinnerModule,
       MatDialogModule,
-      MatExpansionModule
+      MatExpansionModule,
+      MatFormFieldModule,
+      MatInputModule,
+      MatIconModule,
+      MatButtonModule
   ],
   exports: [
       ModalComponent,
@@ -32,7 +38,11 @@ import { FormsModule } from '@angular/forms';
       /* Material */
       MatProgressSpinnerModule,
       MatDialogModule,
-      MatExpansionModule
+      MatExpansionModule,
+      MatFormFieldModule,
+      MatInputModule,
+      MatIconModule,
+      MatButtonModule
   ],
   providers: [
     {

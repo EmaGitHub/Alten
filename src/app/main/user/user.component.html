@@ -1,0 +1,13 @@
+<app-navbar [title]="'User'"></app-navbar>
+
+<div style="width: 100%; text-align: center; display: grid; padding-top: 80px;" *ngIf="user">
+
+    <b>Username:</b> {{user?.username}}
+    <b>Name:</b> {{user?.name}}
+    <b>Email:</b> {{user?.email}}
+
+    <b>Address:</b> {{user?.address.city}} {{user?.address.street}} {{user?.address.suite}}
+    <b>Phone:</b> {{user?.phone}}
+    <b>Website:</b> {{user?.website}}
+    <b>Company:</b> {{user?.company.name}} - {{user?.company.bs}}
+</div>

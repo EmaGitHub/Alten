@@ -1,1 +1,6 @@
-<div class="navbar">Home</div>
+<div class="navbar">
+    <div>
+        <button class="back-button" *ngIf="title != 'Home'" mat-stroked-button color="warn" [routerLink]="['/home']">Back</button>
+    </div>
+    {{title}}
+</div>

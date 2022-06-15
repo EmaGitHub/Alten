@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
+import { Post } from "src/app/interfaces/post.interface";
 import { DetailComponent } from "src/app/main/detail/detail.component";
 
 @Injectable({
@@ -13,12 +14,13 @@ export class ModalMessageService {
        this.dialogConfig.autoFocus = true;
    }
 
-   showDetail(text: string) {
+   showDetail(post: Post) {
     this.dialogConfig.data = {
-        description: text
+        description: post
     }
     this.dialogConfig.disableClose = false;
-    this.dialog.open(DetailComponent, this.dialogConfig);
+    const dialogRef = this.dialog.open(DetailComponent, this.dialogConfig);
+    return dialogRef;
     }
 
 }

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Post } from 'src/app/interfaces/post.interface';
 
 @Component({
   selector: 'app-detail',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailComponent implements OnInit {
 
-  constructor() { }
+  post: Post;
 
-  ngOnInit(): void {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
+
+  ngOnInit() {
+    this.post = this.data.description;
+  }
+
+  remove() {
   }
 
 }

@@ -15,6 +15,6 @@ export class HttpMockService {
     }
 
     getUsers(): Observable<User[]> {
-        return of(users).pipe(delay(0));
+        return of(users).pipe(delay(1000));
     }
 }

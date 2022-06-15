@@ -1,4 +1,4 @@
-import { Component, Input, SimpleChange } from '@angular/core';
+import { Component, EventEmitter, Input, Output, SimpleChange } from '@angular/core';
 import { ModalMessageService } from 'src/app/core/services/modal-service';
 import { Post } from 'src/app/interfaces/post.interface';
 
@@ -11,6 +11,8 @@ export class PostComponent {
 
   @Input() post: Post;
   initials: string = "";
+
+  @Output() removePost: EventEmitter<number> = new EventEmitter();
 
   constructor(private modalService: ModalMessageService) { }
 
@@ -25,7 +27,15 @@ export class PostComponent {
   }
 
   openDetail() {
-    this.modalService.showDetail("aaa");
+    const dialogRef = this.modalService.showDetail(this.post);
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.removePost.emit(result);
+      }
+    });
   }
 
+  goToUserPage() {
+
+  }
 }

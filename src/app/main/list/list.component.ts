@@ -1,4 +1,3 @@
-import { trigger, transition, style, animate, query, stagger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { forkJoin } from 'rxjs';
 import { HttpMockService } from 'src/app/core/services/http-mock.service';
@@ -18,21 +17,23 @@ export class ListComponent implements OnInit {
   posts: Post[] = []; 
   users: User[] = [];
 
-  show: boolean = false;
+  filterValue: string = "";
+  filteredPosts: Post[] = [];
 
   constructor(private httpMockService: HttpMockService, private spinnerService: SpinnerService) { }
 
-  ngOnInit(): void {  }
+  ngOnInit(): void { 
+    this.getData();
+   }
 
   getData() {
-    this.posts = [];
-    this.users = [];
     this.spinnerService.start("Loading");
     let call1 = this.httpMockService.getPosts();
     let call2 = this.httpMockService.getUsers()
     forkJoin([call1, call2]).subscribe(
       ( result: [posts: Post[], users: User[]]) => {
         this.posts = result[0];
+        this.filteredPosts = result[0];
         this.users = result[1];
         this.associateUsername();
         this.spinnerService.stop();
@@ -45,5 +46,25 @@ export class ListComponent implements OnInit {
       let u: User = this.users.filter(u => u.id == this.posts[i].userId)[0];
       this.posts[i].user = u.name;
     }
+  }
+
+  filterChanged() {
+    this.filteredPosts = [];
+    for (let i = 0; i < this.posts.length; i++) {
+      if (this.posts[i].title.includes(this.filterValue) || 
+          this.posts[i].body.includes(this.filterValue) ||
+          this.posts[i].user.includes(this.filterValue)) {
+            this.filteredPosts.push(this.posts[i]);
+        }
+    }
+  }
+
+  resetFilter() {
+    this.filterValue = '';
+    this.filteredPosts = this.posts;
+  }
+
+  delete(id: number) {
+    this.filteredPosts = this.filteredPosts.filter(p => p.id != id);
   }
 }
