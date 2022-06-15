@@ -1,6 +1,7 @@
 <div class="navbar">
-    <div>
-        <button class="back-button" *ngIf="title != 'Home'" mat-stroked-button color="warn" [routerLink]="['/home']">Back</button>
-    </div>
+    <button class="back-button" *ngIf="title != 'Home'" mat-stroked-button color="warn" [routerLink]="['/home']">Back</button>
     {{title}}
+    <button class="settings-button" (click)="openSettings()">
+        <mat-icon style="font-size: 34px;">settings</mat-icon>
+    </button>
 </div>

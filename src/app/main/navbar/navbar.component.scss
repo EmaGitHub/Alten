@@ -15,4 +15,14 @@
         top: 13px;
         background-color: white;
     }
+
+    .settings-button {
+        position: fixed;
+        right: 26px;
+        top: 13px;
+        background-color: red;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
 }
