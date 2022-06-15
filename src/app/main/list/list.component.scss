@@ -1,0 +1,18 @@
+.list-container {
+    padding: 0 10px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    width: 80%;
+    margin: 0 auto 1rem;
+    overflow: hidden;
+
+    .post-row {
+        position: relative;
+    }
+
+    .separator {
+        background-color: #eee;        
+        height: 1px;
+        margin: 0 20px;
+    }
+}

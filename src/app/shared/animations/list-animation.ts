@@ -5,12 +5,12 @@ export const listAnimation = trigger('listAnimation', [
       query(':enter',
         [
             style({ opacity: 0, left: "200px" }), 
-            stagger('60ms', animate('600ms ease-out', style({ opacity: 1, left: 0 })
+            stagger('100ms', animate('600ms ease-out', style({ opacity: 1, left: "0px" })
             ))],
         { optional: true }
       ),
       query(':leave',
-        animate('400ms', style({ opacity: 0 })),
+        animate('400ms', style({ opacity: 0, left: "200px" })),
         { optional: true}
       )
     ])

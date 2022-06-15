@@ -4,15 +4,18 @@ import { ListComponent } from './list/list.component';
 import { PostComponent } from './post/post.component';
 import { DetailComponent } from './detail/detail.component';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './header/header.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
+  entryComponents:[
+    DetailComponent
+  ],
   declarations: [
     HomeComponent,
     ListComponent,
     PostComponent,
     DetailComponent,
-    HeaderComponent
+    NavbarComponent
   ],
   imports: [
       CommonModule

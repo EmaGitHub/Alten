@@ -10,7 +10,7 @@ import { listAnimation } from 'src/app/shared/animations/list-animation';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css'],
+  styleUrls: ['./list.component.scss'],
   animations: [listAnimation]
 })
 export class ListComponent implements OnInit {
@@ -27,16 +27,23 @@ export class ListComponent implements OnInit {
   getData() {
     this.posts = [];
     this.users = [];
-    this.spinnerService.start();
+    this.spinnerService.start("Loading");
     let call1 = this.httpMockService.getPosts();
     let call2 = this.httpMockService.getUsers()
     forkJoin([call1, call2]).subscribe(
       ( result: [posts: Post[], users: User[]]) => {
         this.posts = result[0];
         this.users = result[1];
+        this.associateUsername();
         this.spinnerService.stop();
-        console.log("AAA "+JSON.stringify(this.posts))
       }
     )
+  }
+
+  associateUsername() {
+    for (let i = 0; i < this.posts.length; i++) {
+      let u: User = this.users.filter(u => u.id == this.posts[i].userId)[0];
+      this.posts[i].user = u.name;
+    }
   }
 }

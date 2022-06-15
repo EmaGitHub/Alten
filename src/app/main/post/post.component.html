@@ -1,12 +1,16 @@
-<div class="post">
+<div class="post row">
     <div class="square-container">
-        <div class="square"></div>
+        <div class="square" (click)="openDetail()">{{initials}}</div>
     </div>
-    <div class="title">
-        {{post.title}}
+    <div class="col">
+        <div class="title">
+            {{post.title}}
+        </div>
+        <div class="body">
+            {{post.body}}
+        </div>
+        <div class="user">
+            Pubblicato da: <a style="color: red; text-decoration: underline; font-size: 14px; cursor: pointer;">{{post.user}}</a>
+        </div>
     </div>
-    <div class="body">
-        {{post.body}}
-    </div>
-    <div class="user"></div>
 </div>

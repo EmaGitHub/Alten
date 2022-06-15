@@ -39,6 +39,37 @@ const posts: Post[] = [
     title: 'nesciunt quas odio',
     userId: 3,
   },
+  {
+    body: 'quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto',
+    id: 6,
+    title:
+      'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
+    userId: 1,
+  },
+  {
+    body: 'est rerum tempore vitae sequi sint nihil reprehenderit dolor beatae ea dolores neque fugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis qui aperiam non debitis possimus qui neque nisi nulla',
+    id: 7,
+    title: 'qui est esse',
+    userId: 1,
+  },
+  {
+    body: 'et iusto sed quo iure voluptatem occaecati omnis eligendi aut ad voluptatem doloribus vel accusantium quis pariatur molestiae porro eius odio et labore et velit aut',
+    id: 8,
+    title: 'ea molestias quasi exercitationem repellat qui ipsa sit aut',
+    userId: 2,
+  },
+  {
+    body: 'ullam et saepe reiciendis voluptatem adipisci sit amet autem assumenda provident rerum culpa quis hic commodi nesciunt rem tenetur doloremque ipsam iure quis sunt voluptatem rerum illo velit',
+    id: 9,
+    title: 'eum et est occaecati',
+    userId: 2,
+  },
+  {
+    body: 'repudiandae veniam quaerat sunt sed alias aut fugiat sit autem sed est voluptatem omnis possimus esse voluptatibus quis est aut tenetur dolor neque',
+    id: 10,
+    title: 'nesciunt quas odio',
+    userId: 3,
+  }
 ];
 
 export default posts;

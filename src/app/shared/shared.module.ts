@@ -4,6 +4,9 @@ import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/materia
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     entryComponents: [
@@ -14,6 +17,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
       SpinnerComponent
   ],
   imports: [
+      FormsModule, 
+
       /* Material */
       MatProgressSpinnerModule,
       MatDialogModule,
@@ -22,6 +27,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
   exports: [
       ModalComponent,
       SpinnerComponent,
+      FormsModule,
+
       /* Material */
       MatProgressSpinnerModule,
       MatDialogModule,
