@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, Output, SimpleChange } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChange } from '@angular/core';
 import { ModalMessageService } from 'src/app/core/services/modal-service';
+import { ThemeService } from 'src/app/core/services/theme.service';
 import { Post } from 'src/app/interfaces/post.interface';
 
 @Component({
@@ -7,14 +8,24 @@ import { Post } from 'src/app/interfaces/post.interface';
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss']
 })
-export class PostComponent {
+export class PostComponent implements OnInit {
 
   @Input() post: Post;
   initials: string = "";
 
   @Output() removePost: EventEmitter<number> = new EventEmitter();
 
-  constructor(private modalService: ModalMessageService) { }
+  colorSelected: string;
+
+  constructor(private modalService: ModalMessageService, private themeService: ThemeService) { }
+
+  ngOnInit(): void {
+    this.themeService.themeChangeSubjectAsObservable.subscribe(
+      (color: string) => {
+        this.colorSelected = color;
+      }
+    )
+  }
 
   ngOnChanges(change: SimpleChange) {
     if (this.post.user) {

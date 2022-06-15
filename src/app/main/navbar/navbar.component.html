@@ -1,7 +1,16 @@
-<div class="navbar">
+<div class="navbar" [ngStyle]="{'background-color': colorSelected}">
     <button class="back-button" *ngIf="title != 'Home'" mat-stroked-button color="warn" [routerLink]="['/home']">Back</button>
     {{title}}
-    <button class="settings-button" (click)="openSettings()">
+    <button class="settings-button" [ngStyle]="{'background-color': colorSelected}" (click)="openSettings()">
         <mat-icon style="font-size: 34px;">settings</mat-icon>
     </button>
+    <div [@openClose]='state' class="settings-div">
+        <div *ngIf="visible" class="fadeIn">
+            Theme selection
+            <div class="color-selection" (click)="selectColor('#ff0000')">Red</div>
+            <div class="color-selection" (click)="selectColor('#008300')">Green</div>
+            <div class="color-selection" (click)="selectColor('#416bd7')">Blue</div>
+            <div class="color-selection" (click)="selectColor('#de24d5')">Pink</div>
+        </div>
+    </div>
 </div>

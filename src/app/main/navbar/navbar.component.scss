@@ -1,5 +1,4 @@
 .navbar {
-    background-color: red;
     color: white;
     font-size: 32px;
     display: block;
@@ -14,15 +13,36 @@
         left: 13px;
         top: 13px;
         background-color: white;
+        color: gray;
     }
 
     .settings-button {
         position: fixed;
         right: 26px;
         top: 13px;
-        background-color: red;
         border: none;
         color: white;
         cursor: pointer;
+    }
+
+    .settings-div {
+        position: fixed;
+        right: 26px;
+        top: 50px;
+        width: 120px;
+        height: 0px;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid black;
+        border-radius: 10px;
+        color: black;
+        font-size: 14px;
+
+        .color-selection {
+            cursor: pointer;
+            font-size: 20px !important;
+        }
+        .color-selection:hover {
+            background-color: rgb(229, 229, 229);
+        }
     }
 }

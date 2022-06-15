@@ -1,6 +1,6 @@
 <div class="post row">
     <div class="square-container">
-        <div class="square" (click)="openDetail()">{{initials}}</div>
+        <div class="square" [ngStyle]="{'background-color': colorSelected}" (click)="openDetail()" >{{initials}}</div>
     </div>
     <div class="col">
         <div class="title">
