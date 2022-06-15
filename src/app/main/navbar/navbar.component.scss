@@ -36,10 +36,21 @@
         border-radius: 10px;
         color: black;
         font-size: 14px;
+        opacity: 0;
+        box-shadow: 1px 1px 7px #8c8c8c;
 
         .color-selection {
             cursor: pointer;
             font-size: 20px !important;
+            margin: 0;
+
+            .circle {
+                border: 1px solid black;
+                border-radius: 25px;
+                height: 15px;
+                width: 15px;
+                margin-left: 15px;
+            }
         }
         .color-selection:hover {
             background-color: rgb(229, 229, 229);

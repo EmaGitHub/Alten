@@ -51,9 +51,9 @@ export class ListComponent implements OnInit {
   filterChanged() {
     this.filteredPosts = [];
     for (let i = 0; i < this.posts.length; i++) {
-      if (this.posts[i].title.includes(this.filterValue) || 
-          this.posts[i].body.includes(this.filterValue) ||
-          this.posts[i].user.includes(this.filterValue)) {
+      if (this.posts[i].title.toUpperCase().includes(this.filterValue.toUpperCase()) || 
+          this.posts[i].body.toUpperCase().includes(this.filterValue.toUpperCase()) ||
+          this.posts[i].user.toUpperCase().includes(this.filterValue.toUpperCase())) {
             this.filteredPosts.push(this.posts[i]);
         }
     }

@@ -8,7 +8,6 @@ import { ThemeService } from 'src/app/core/services/theme.service';
   styleUrls: ['./navbar.component.scss'],
   animations: [
     trigger('openClose', [
-      // ...
       state('opened', style({
         height: '150px',
         opacity: 1,

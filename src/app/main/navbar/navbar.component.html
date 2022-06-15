@@ -7,10 +7,30 @@
     <div [@openClose]='state' class="settings-div">
         <div *ngIf="visible" class="fadeIn">
             Theme selection
-            <div class="color-selection" (click)="selectColor('#ff0000')">Red</div>
-            <div class="color-selection" (click)="selectColor('#008300')">Green</div>
-            <div class="color-selection" (click)="selectColor('#416bd7')">Blue</div>
-            <div class="color-selection" (click)="selectColor('#de24d5')">Pink</div>
+            <div class="color-selection row" (click)="selectColor('#ff0000')">
+                <div class="col-3" style="padding: 0; display: flex; align-items: center;">
+                    <div class="circle" style="background-color: #ff0000;"></div>
+                </div>
+                <div class="col-9" style="text-align: left;">Red</div>
+            </div>
+            <div class="color-selection row" (click)="selectColor('#008300')">
+                <div class="col-3" style="padding: 0; display: flex; align-items: center;">
+                    <div class="circle" style="background-color: #008300;"></div>
+                </div>
+                <div class="col-9" style="text-align: left;">Green</div>
+            </div>
+            <div class="color-selection row" (click)="selectColor('#416bd7')">
+                <div class="col-3" style="padding: 0; display: flex; align-items: center;">
+                    <div class="circle" style="background-color: #416bd7;"></div>
+                </div>
+                <div class="col-9" style="text-align: left;">Blue</div>
+            </div>
+            <div class="color-selection row" (click)="selectColor('#de24d5')">
+                <div class="col-3" style="padding: 0; display: flex; align-items: center;">
+                    <div class="circle" style="background-color: #de24d5;"></div>
+                </div>
+                <div class="col-9" style="text-align: left;">Pink</div>
+            </div>
         </div>
     </div>
 </div>
