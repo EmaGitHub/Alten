@@ -1,5 +1,6 @@
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Component, Input, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { ThemeService } from 'src/app/core/services/theme.service';
 
 @Component({
@@ -27,13 +28,23 @@ import { ThemeService } from 'src/app/core/services/theme.service';
 })
 export class NavbarComponent implements OnInit {
 
-  @Input() title: string;
+  title: string = '';
   state = 'closed';
   visible = false;
-
   colorSelected;
 
-  constructor(private themeService: ThemeService) { }
+  constructor(private router: Router, private themeService: ThemeService) { 
+    router.events.subscribe((val) => {
+      if (val instanceof NavigationEnd) {
+        if (val.url.includes('/home')) {
+          this.title = "Home";
+        }
+        if (val.url.includes('/user')) {
+          this.title = "User Detail";
+        }
+      }
+    });
+  }
 
   ngOnInit(): void {
     this.themeService.themeChangeSubjectAsObservable.subscribe(
