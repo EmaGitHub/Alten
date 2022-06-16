@@ -1,4 +1,15 @@
 <div class="content">
-    <app-navbar [title]="'Home'"></app-navbar>
-    <app-list style="margin-top:60px;"></app-list>
+    <app-navbar [title]="'Home'" class="fadeIn"></app-navbar>
+
+    <div style="width: 100%; text-align: center; margin: 20px 0;">
+        <mat-form-field *ngIf="posts.length > 0" appearance="fill">
+            <mat-label>Filter posts</mat-label>
+            <input matInput type="text" [(ngModel)]="filterValue" (ngModelChange)="filterChanged()">
+            <button *ngIf="filterValue" matSuffix mat-icon-button aria-label="Clear" (click)="resetFilter()" style="border: none;">
+              <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+
+    <app-list [posts]="filteredPosts" (removePost)="delete($event)" style="margin-top:60px;" class="fadeIn"></app-list>
 </div>

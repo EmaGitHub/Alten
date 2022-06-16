@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpMockService } from 'src/app/core/services/http-mock.service';
 import { SpinnerService } from 'src/app/core/services/spinner-service';
 import { User } from 'src/app/interfaces/user.interface';
+import { forkJoin } from 'rxjs';
+import { Post } from 'src/app/interfaces/post.interface';
 
 @Component({
   selector: 'app-user',
@@ -12,15 +14,18 @@ import { User } from 'src/app/interfaces/user.interface';
 export class UserComponent implements OnInit {
 
   user: User;
+  posts: Post[];
 
-  constructor(private httpService: HttpMockService, private spinnerService: SpinnerService, private route: ActivatedRoute) { }
+  constructor(private httpMockService: HttpMockService, private spinnerService: SpinnerService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.spinnerService.start("Loading");
-    this.httpService.getUsers().subscribe(
-      (data: User[]) => {
-        this.user = data.filter(u => u.id == this.route.snapshot.params['id'])[0];
-        console.log("U "+JSON.stringify(this.user))
+    let call1 = this.httpMockService.getPosts();
+    let call2 = this.httpMockService.getUsers()
+    forkJoin([call1, call2]).subscribe(
+      ( result: [posts: Post[], users: User[]]) => {
+        this.posts = result[0].filter(p => p.userId == this.route.snapshot.params['id']);
+        this.user = result[1].filter(u => u.id == this.route.snapshot.params['id'])[0];
         this.spinnerService.stop();
       }
     )

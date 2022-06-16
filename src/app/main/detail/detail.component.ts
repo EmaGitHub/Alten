@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Post } from 'src/app/interfaces/post.interface';
 
@@ -15,9 +15,6 @@ export class DetailComponent implements OnInit {
 
   ngOnInit() {
     this.post = this.data.description;
-  }
-
-  remove() {
   }
 
 }

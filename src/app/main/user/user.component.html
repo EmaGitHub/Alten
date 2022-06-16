@@ -1,17 +1,19 @@
-<app-navbar [title]="'User Detail'"></app-navbar>
+<app-navbar [title]="'User Detail'" class="fadeIn"></app-navbar>
 
-<div style="width: 100%; text-align: center; display: grid; padding-top: 80px;" *ngIf="user">
-
-    <div style="width: 100%; text-align:center;">
-        <div style="border: 1px solid gray; border-radius: 8px; width: 100px; height: 120px; margin: 0 auto; margin-bottom: 20px;"></div>
+<div class="row" style="margin-top: 100px;">
+    <div class="fadeIn col-3" style="text-align: center; display: grid; padding: 0 30px;" *ngIf="user">
+        <div style="width: 100%; text-align:center;">
+            <div style="border: 1px solid gray; border-radius: 8px; width: 100px; height: 120px; margin: 0 auto; margin-bottom: 20px;"></div>
+        </div>
+        <b>Username:</b> {{user?.username}}
+        <b>Name:</b> {{user?.name}}
+        <b>Email:</b> {{user?.email}}
+        <b>Address:</b> {{user?.address.city}} {{user?.address.street}} {{user?.address.suite}}
+        <b>Phone:</b> {{user?.phone}}
+        <b>Website:</b> {{user?.website}}
+        <b>Company:</b> {{user?.company.name}} - {{user?.company.bs}}
     </div>
-    
-    <b>Username:</b> {{user?.username}}
-    <b>Name:</b> {{user?.name}}
-    <b>Email:</b> {{user?.email}}
-
-    <b>Address:</b> {{user?.address.city}} {{user?.address.street}} {{user?.address.suite}}
-    <b>Phone:</b> {{user?.phone}}
-    <b>Website:</b> {{user?.website}}
-    <b>Company:</b> {{user?.company.name}} - {{user?.company.bs}}
+    <div class="col-9">
+        <app-list [posts]="posts" class="fadeIn"></app-list>
+    </div>
 </div>
