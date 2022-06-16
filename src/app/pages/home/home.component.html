@@ -1,13 +1,5 @@
 <div class="content">
-    <div style="width: 100%; text-align: center; margin: 20px 0;">
-        <mat-form-field *ngIf="posts.length > 0" appearance="fill">
-            <mat-label>Filter posts</mat-label>
-            <input matInput type="text" [(ngModel)]="filterValue" (ngModelChange)="filterChanged()">
-            <button *ngIf="filterValue" matSuffix mat-icon-button aria-label="Clear" (click)="resetFilter()" style="border: none;">
-              <mat-icon>close</mat-icon>
-            </button>
-        </mat-form-field>
-    </div>
-
+    <app-filter-box (filter)="filterChanged($event)"></app-filter-box>
+    
     <app-list [posts]="filteredPosts" (removePost)="delete($event)" style="margin-top:60px;" class="fadeIn"></app-list>
 </div>

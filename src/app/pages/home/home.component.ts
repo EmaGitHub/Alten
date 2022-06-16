@@ -46,7 +46,8 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  filterChanged() {
+  filterChanged(value: string) {
+    this.filterValue = value;
     this.filteredPosts = [];
     for (let i = 0; i < this.posts.length; i++) {
       if (this.posts[i].title.toUpperCase().includes(this.filterValue.toUpperCase()) || 

@@ -1,0 +1,56 @@
+.filter-div {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    .filter-field {
+        position: relative;
+        right: 11px;
+        background-color: white;
+        border: 1px solid #b5b5b5;
+        border-radius: 50px;
+        text-align: center;
+        cursor: pointer;
+        z-index: 8;
+    }
+    .x-icon {
+        font-size: 16px;
+        color: #4e4e4e;
+        position: absolute;
+        cursor: pointer;
+        left: 152px;
+        bottom: 6px;
+        display: inline-flex;
+        align-items: center;
+        right: 35px;
+    }
+    .icon-container {
+        position: relative;
+        top: 4px;
+        left: 22px;
+        cursor: pointer;
+        z-index: 9;
+        .search-icon {
+            font-size: 18px;
+            color: #005089;
+            cursor: pointer;
+        }
+    }
+    .label {
+        font-weight: 600;
+        font-size: 14px;
+    }
+}
+
+::ng-deep .mat-form-field-underline {
+    display: none;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+    padding-bottom: 0px !important;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-infix {
+    border: 0;
+    padding: 10px;
+    padding-right: 25px;
+}

@@ -38,6 +38,12 @@ const posts: Post[] = [
     id: 5,
     title: 'nesciunt quas odio',
     userId: 3,
+  },
+  {
+    body: 'veniam quaerat sunt sed alias aut fugiat sit autem sed est voluptatem omnis possimus esse voluptatibus quis est aut tenetur dolor neque',
+    id: 6,
+    title: 'nesciunt odio',
+    userId: 1,
   }
   /* {
     body: 'quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto',

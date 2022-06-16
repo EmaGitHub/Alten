@@ -1,0 +1,10 @@
+<div class="filter-div">
+    <span class="icon-container" [@fadeAnimation]="{value: opened}" (click)="focus()">
+        <mat-icon>search</mat-icon>
+    </span>
+    <mat-form-field [floatLabel]="'never'" class="filter-field" [@boxAnimation]="{value: opened}">
+        <input matInput #input (keyup)="applyFilter($any($event.target).value)" (focus)="focus()" (focusout)="focusOut()">
+        <mat-icon *ngIf="flt !== ''" class="x-icon fadeIn" (click)="resetFilter(true)">close</mat-icon>
+    </mat-form-field>   
+</div> 
+

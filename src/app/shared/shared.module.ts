@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from '../app.routing.module.';
+import { FilterBoxComponent } from './components/filter-box/filter-box.component';
 
 @NgModule({
     entryComponents: [
@@ -20,7 +21,8 @@ import { AppRoutingModule } from '../app.routing.module.';
   declarations: [
       ModalComponent,
       SpinnerComponent,
-      NavbarComponent
+      NavbarComponent,
+      FilterBoxComponent
   ],
   imports: [
       FormsModule, 
@@ -39,6 +41,7 @@ import { AppRoutingModule } from '../app.routing.module.';
   exports: [
       FormsModule,
       NavbarComponent,
+      FilterBoxComponent,
 
       /* Material */
       MatProgressSpinnerModule,
