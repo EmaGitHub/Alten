@@ -64,6 +64,7 @@ export class HomeComponent implements OnInit {
   }
 
   delete(id: number) {
+    this.posts = this.posts.filter(p => p.id != id);
     this.filteredPosts = this.filteredPosts.filter(p => p.id != id);
   }
 

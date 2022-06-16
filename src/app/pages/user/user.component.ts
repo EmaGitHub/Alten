@@ -31,4 +31,8 @@ export class UserComponent implements OnInit {
     )
   }
 
+  delete(id: number) {
+    this.posts = this.posts.filter(p => p.id != id);
+  }
+
 }

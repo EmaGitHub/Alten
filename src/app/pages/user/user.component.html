@@ -12,6 +12,6 @@
         <b>Company:</b> {{user?.company.name}} - {{user?.company.bs}}
     </div>
     <div class="col-9">
-        <app-list [posts]="posts" class="fadeIn"></app-list>
+        <app-list [posts]="posts" (removePost)="delete($event)" class="fadeIn"></app-list>
     </div>
 </div>
