@@ -9,6 +9,9 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { CommonModule } from '@angular/common';
+import { AppRoutingModule } from '../app.routing.module.';
 
 @NgModule({
     entryComponents: [
@@ -16,10 +19,13 @@ import { MatButtonModule } from '@angular/material/button';
   ],
   declarations: [
       ModalComponent,
-      SpinnerComponent
+      SpinnerComponent,
+      NavbarComponent
   ],
   imports: [
       FormsModule, 
+      CommonModule,
+      AppRoutingModule,
 
       /* Material */
       MatProgressSpinnerModule,
@@ -32,6 +38,7 @@ import { MatButtonModule } from '@angular/material/button';
   ],
   exports: [
       FormsModule,
+      NavbarComponent,
 
       /* Material */
       MatProgressSpinnerModule,

@@ -4,7 +4,6 @@ import { ListComponent } from './list/list.component';
 import { PostComponent } from './post/post.component';
 import { DetailComponent } from './detail/detail.component';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from './navbar/navbar.component';
 import { SharedModule } from '../shared/shared.module';
 import { UserComponent } from './user/user.component';
 import { AppRoutingModule } from '../app.routing.module.';
@@ -18,7 +17,6 @@ import { AppRoutingModule } from '../app.routing.module.';
     ListComponent,
     PostComponent,
     DetailComponent,
-    NavbarComponent,
     UserComponent
   ],
   imports: [
