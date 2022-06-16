@@ -38,8 +38,8 @@ const posts: Post[] = [
     id: 5,
     title: 'nesciunt quas odio',
     userId: 3,
-  },
-  {
+  }
+  /* {
     body: 'quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto',
     id: 6,
     title:
@@ -69,7 +69,7 @@ const posts: Post[] = [
     id: 10,
     title: 'nesciunt quas odio',
     userId: 3,
-  }
+  } */
 ];
 
 export default posts;
