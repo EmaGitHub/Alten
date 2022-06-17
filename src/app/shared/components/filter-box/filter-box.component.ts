@@ -1,5 +1,6 @@
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
+import { ThemeService } from 'src/app/core/services/theme.service';
 
 @Component({
   selector: 'app-filter-box',
@@ -44,6 +45,18 @@ export class FilterBoxComponent {
   @Output() filter: EventEmitter<string> = new EventEmitter();
   flt = '';
   opened = 'false';
+
+  colorSelected = '#ff0000';
+
+  constructor(private themeService: ThemeService) {}
+
+  ngOnInit() {
+    this.themeService.themeChangeSubjectAsObservable.subscribe(
+      (color: string) => {
+        this.colorSelected = color;
+      }
+    )
+  }
   
   applyFilter(filterValue: string): void {
     this.filter.emit(filterValue);
